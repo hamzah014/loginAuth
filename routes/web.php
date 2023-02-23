@@ -22,7 +22,7 @@ use Laravel\Socialite\Facades\Socialite;
 Auth::routes();
 
 Route::get('/naver/login', [LoginController::class, 'naverLogin'])->name('naver.login');
-Route::get('/naver/callback', [Controller::class, 'naverCallback']);
+Route::get('/naver/callback', [LoginController::class, 'naverCallback']);
 
 // Route::get('/naver/callback', function () {
 //     $user = Socialite::driver('naver')->user();

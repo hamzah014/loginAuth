@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
+use App\Models\SocialAccount;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -33,11 +35,4 @@ class HomeController extends Controller
         return view('admin.home');
     }
 
-    public function naverCallback()
-    {
-        //dump(auth()->user());
-        $naveruser = Socialite::driver('naver')->user();
-        dump($naveruser);
-        //return view('home');
-    }
 }
